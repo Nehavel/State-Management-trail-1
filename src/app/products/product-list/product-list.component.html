@@ -1,0 +1,23 @@
+
+ <div *ngFor="let product of products">
+<div *ngIf="products?.length">
+  <div>
+  
+    <h3>{{ product.productName }}</h3>
+      <ng-container *ngIf="displayCode">
+        ({{ product.productCode }})
+      </ng-container>
+
+  </div>
+</div>
+</div>
+<div>
+
+    <div >
+      <label>
+        <input type="checkbox"
+               (change)="checkChanged($event.target.checked)"
+               [checked]="displayCode">
+        Display Product Code
+      </label>
+    </div>
